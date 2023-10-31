@@ -6,7 +6,54 @@ import styles from './App.module.css';
 
 import './global.css'
 
-
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/ghiberti85.png',
+      name: 'Fernando Ghiberti',
+      role: 'Software Engineer @+A Educação',
+    },
+    content: [
+      { 
+        type: 'paragraph', 
+        content: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+      },
+      { 
+        type: 'paragraph', 
+        content: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+      },
+      { 
+        type: 'link', 
+        content: 'linkedin.com/in/fernando-ghiberti'
+      },
+    ],
+    publishedAt: new Date('2023-10-31 09:52:30'),
+  },  
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/ghiberti85.png',
+      name: 'Gabriel Ghiberti',
+      role: 'Tech Lead @+A Educação',
+    },
+    content: [
+      { 
+        type: 'paragraph', 
+        content: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+      },
+      { 
+        type: 'paragraph', 
+        content: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+      },
+      { 
+        type: 'link', 
+        content: 'linkedin.com/in/fernando-ghiberti'
+      },
+    ],
+    publishedAt: new Date('2023-10-31 10:59:30'),
+  },
+]
 
 export function App() {
 
@@ -16,15 +63,15 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post
-            author="Fernando Ghiberti"
-            content="Lorem ipsum dolor sit amet consectetur adipiscing elit."
-          />
-
-          <Post
-            author="Gabriel Ghiberti"
-            content="Sou um post muito legal!"
-          />
+          {posts.map(post => {
+            return (
+              <Post 
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </div>
