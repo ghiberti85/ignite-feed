@@ -17,7 +17,7 @@ const posts = [
     content: [
       { 
         type: 'paragraph', 
-        content: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+        content: 'Hey Dude!Im trying to code here!'
       },
       { 
         type: 'paragraph', 
@@ -40,7 +40,7 @@ const posts = [
     content: [
       { 
         type: 'paragraph', 
-        content: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+        content: 'Hey Dude!Im trying to code here!'
       },
       { 
         type: 'paragraph', 
