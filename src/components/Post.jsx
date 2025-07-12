@@ -21,6 +21,8 @@ export function Post({ author, publishedAt, content }) {
         locale: ptBr,
         addSuffix: true,
     })
+    
+    const isNewCommentEmpty = newCommentText.length === 0;
 
     function handleCreateNewComment() {
         event.preventDefault()
@@ -45,8 +47,6 @@ export function Post({ author, publishedAt, content }) {
 
         setComments(commentsWithoutDeletedOne);
     }
-
-    const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
         <article className={styles.post}>
